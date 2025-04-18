@@ -9,7 +9,7 @@ set -euo pipefail
 # ─── load .env ─────────────────────────────────────────────────────
 script_dir=$(dirname "$(realpath "$0")")
 env_file="$script_dir/.env"
-[[ -f $env_file ]] && source "$env_file"
+[[ -f $env_file ]] && { set -o allexport; source "$env_file"; set +o allexport; }
 
 # ─── required config (must be set in .env or env) ──────────────────
 REMOTE=${REMOTE:-}
@@ -107,13 +107,16 @@ cmd=(
     -e ENABLE_ACL
     -e DEBUG
     --network host
-  rclone/rclone -c "/app/backup-container.sh"
 )
 
 for v in "${volumes[@]}"; do
-  cmd+=( -v "$v:/data/$v:ro" )
+  # Strip trailing colon from volume name (if any) and mount into /data/<name>
+  name="${v%:}"
+  cmd+=( -v "${project_name}_$name:/data/${name}:ro" )
 done
+cmd+=( rclone/rclone -c "/app/backup-container.sh" )
 
+info "docker command: ${cmd[*]}"
 info "running backup container…"
 "${cmd[@]}"
 exit $?

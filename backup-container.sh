@@ -58,7 +58,6 @@ if [ "${ENABLE_ACL:-0}" = "1" ]; then
   if rclone help s3api >/dev/null 2>&1; then
     info "setting bucket ACL to public-read-write"
     if rclone s3api put-bucket-acl \
-         --profile "$REMOTE" \
          --bucket "$MAIN_BUCKET" \
          --acl public-read-write; then
       ok "ACL set"
@@ -96,7 +95,6 @@ for path in /data/*; do
   rclone sync \
     "$path" \
     "$dest" \
-    --profile "$REMOTE" \
     $SYNC_FLAGS \
     --stats 5s \
     --stats-one-line
