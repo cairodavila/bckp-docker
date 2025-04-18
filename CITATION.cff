@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "if you use this project, please cite it using the metadata in this file."
+title: "bckp-docker"
+version: "0.1.0"
+date-released: "2025-04-18"
+authors:
+  - name: "Cairo d'Avila"
+    affiliation: "koik"
+    affiliation-URL: "https://koik.com.br/"
+contributors:
+  - name: "Roocode"
+    role: "facilitator"
+  - name: "Open Router"
+    role: "facilitator"
+  - name: "OpenAI"
+    role: "facilitator"
+  - name: "Gemini"
+    role: "facilitator"
+  - name: "GPT-4.1"
+    role: "co-author"
+  - name: "O4 Mini"
+    role: "co-author"
+  - name: "Gemini 2.5 Pro"
+    role: "co-author"
+repository-code: "https://github.com/koikbr"
+keywords:
+  - Roocode
+  - Open Router
+  - OpenAI
+  - Gemini
