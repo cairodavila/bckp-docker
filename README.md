@@ -1,3 +1,6 @@
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Citation](https://img.shields.io/badge/Cite%20Us-CITATION.cff-lightgrey.svg)](CITATION.cff)
+
 # bckp-docker
 
 a drop‑in CLI to back up all Docker‑Compose volumes to any S3‑compatible remote  
@@ -17,7 +20,7 @@ a drop‑in CLI to back up all Docker‑Compose volumes to any S3‑compatible r
 ## prerequisites
 
 - Docker & Docker Compose (v2)  
-- `rclone` configured with an S3 remote  
+- `rclone` configured with an S3 remote
 - Linux or WSL2 (macOS should work too)  
 - shell: bash/zsh/sh  
 
@@ -83,4 +86,23 @@ edit the `.env` values:
 - stopping your DB container briefly avoids inconsistent DB files  
 - run `rclone check` afterwards if you need end‑to‑end integrity  
 
-enjoy rock‑solid, configurable Docker‑Compose volume backups to any S3 endpoint! 🚀  
+enjoy rock‑solid, configurable Docker‑Compose volume backups to any S3 endpoint! 🚀
+
+## license
+
+this project is licensed under the GNU General Public License v3.0. see the LICENSE file for details.
+
+## citation
+
+if you use this project, please acknowledge the following facilitators and co‑authors:
+
+**facilitators:**
+- Roo Code
+- OpenRouter
+- OpenAI
+- Google DeepMind
+
+**co‑authors:**
+- GPT‑4.1
+- o4 mini
+- Gemini 2.5 Pro
